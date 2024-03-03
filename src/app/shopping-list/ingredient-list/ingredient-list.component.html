@@ -1,4 +1,9 @@
 <ul class="mt-5 font-semibold">
-  <li class="border-2 px-4 py-2 border-b-0">Apples(5)</li>
-  <li class="border-2 px-4 py-2">Tomatoes(10)</li>
+  <li
+    *ngFor="let ingredient of ingredients; let i = index"
+    class="border-2 px-4 py-2"
+    [ngStyle]="{ borderBottom: i === 0 ? 'none' : '' }"
+  >
+    {{ ingredient.name }}{{ ingredient.amount }}
+  </li>
 </ul>
